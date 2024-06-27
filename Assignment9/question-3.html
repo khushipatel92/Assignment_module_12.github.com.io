@@ -1,0 +1,35 @@
+<!-- Question:3
+ 
+       ● Write a program of promises and handle that promises also
+
+     Answer:
+     
+     -> / Create a new promise
+      let myPromise = new Promise((resolve, reject) => {
+        // Simulate an asynchronous operation using setTimeout
+      setTimeout(() => {
+        let success = true; // Change this to false to test the reject case
+
+        if (success) {
+            resolve("Operation was successful!");
+        } else {
+            reject("Operation failed.");
+        }
+    }, 2000);
+});
+
+   // Handle the promise
+     myPromise
+    .then((message) => {
+        // This block runs if the promise is resolved
+        console.log("Success: " + message);
+    })
+    .catch((error) => {
+        // This block runs if the promise is rejected
+        console.log("Error: " + error);
+    })
+    .finally(() => {
+        // This block runs regardless of the promise being resolved or rejected
+        console.log("Promise handling complete.");
+    });
+-->

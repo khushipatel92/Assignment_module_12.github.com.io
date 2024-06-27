@@ -1,0 +1,36 @@
+<!-- Question:4
+
+       ● Use fetch method for calling an api https://fakestoreapi.com/products
+
+     Answer :
+     
+       -> // Define the API endpoint
+         const apiEndpoint = 'https://fakestoreapi.com/products';
+
+            // Function to fetch data from the API
+            async function fetchProducts() {
+              try {
+                // Make the API call using fetch
+                const response = await fetch(apiEndpoint);
+                
+                // Check if the response is ok (status code 200-299)
+                if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+                }
+    
+                // Parse the JSON response
+                const products = await response.json();
+    
+                // Log the products data
+                console.log(products);
+            } catch (error) {
+                // Log any errors that occur during the fetch
+                console.error('Error fetching the products:', error);
+              }
+            }
+
+           // Call the function to fetch products
+            fetchProducts();
+
+
+-->
